@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Dublin Fine Finishes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+    <svg class="minimized" xmlns='http://www.w3.org/2000/svg'>
+        <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="turbulence" baseFrequency="0.002 0.07" numOctaves="8" result="noiseTexture"/>
+        <feComponentTransfer in="noiseTexture" result="hardNoise">
+            <feFuncA type="linear" slope="5" intercept="-1"/>
+        </feComponentTransfer>
+        <feColorMatrix type="matrix" in="hardNoise" result="coloredNoise"
+        values="0.6 0 0 0 0
+                0.5 0 0 0 0
+                0.4 0 0 0 0
+                0 0 0 0.15 0"/>
+        
+        <feBlend in="coloredNoise" in2="SourceGraphic" mode="soft-light"/>
+    </filter>
+    </svg>
+    <header>
+        <a href="/" class="logo-container">
+            
+            
+            <img src="static/logo-128.png">
+            
+        </a>
+        <div class="header-nav">
+            <a href="/">Home</a>
+            <a href="quote">Get a Quote</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="contact-title reveal-on-scroll">
+            <h1>Get a Quote</h1>
+            
+            <p class="subheadline">
+                Send photos for a fast, accurate quote.
+            </p>
+
+            
+
+        </section>
+        <div class="horizontal-fade"></div>
+        
+        <section class="contact-section">
+
+            <div class="form-wrapper reveal-on-scroll">
+                <h3>No home visit needed. Photos help us give an accurate quote.</h3>
+                <form id="requestForm">
+                    
+                    <div class="left-column">
+                        <input type="text" placeholder="Name" name="name" autocomplete="off">
+                        <input type="tel" placeholder="Mobile number*" name="phone_number">
+                        <input type="text" placeholder="Area / Location*" name="area">
+                        <input type="text" name="subject" maxlength="100" autocomplete="off" tabindex="-1">
+                        <textarea maxlength="1000" placeholder="Your message&#10;Briefly describe the work required" name="message" rows="4"></textarea>
+                        
+                    </div>
+
+                    <div class="right-column">
+                        
+                        <div class="upload-container">
+                            <div class="upload-trigger" id="uploadTrigger">
+                                <input type="file" id="fileInput" multiple accept="image/*" hidden>
+                                
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+
+                                <span class="upload-title">Upload up to 8 images</span>
+                                <span class="upload-text">8MB max</span>
+                                <span class="upload-text">JPEG, PNG, WebP, GIF, AVIF </span>
+                                <span class="upload-status" id="uploadStatus">No image selected</span>
+                            </div>
+
+                            <div class="image-previews" id="imagePreviews"></div>
+                        </div>
+                        <p>* Required</p>
+                        <button type="submit" class="submit-btn">Send Request</button>
+
+                        
+                        
+                    </div>
+
+                </form>
+                <div class="help-section reveal-on-scroll">
+                    <h3>What should I include?</h3>
+                    <p>This helps us give you an accurate quote without a visit.</p>
+                    <div class="include-list">
+                        <div class="include-item">
+                            <div class="icon-container">
+                                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                            </div>
+                            <div class="include-item-details">
+                                <h4>Photos of the area</h4>
+                                <p>Wide shots showing the full room or wall.</p>
+                            </div>
+                        </div>
+                        <div class="include-item">
+                            <div class="icon-container">
+                                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M10 8l4-1 1 5-3 2-3-1z" />
+                                    <path d="M10 8l-6-4" />
+                                    <path d="M14 7l3-3" />
+                                    <path d="M9 13l-1 4-1 4" />
+                                    <path d="M12 14l3 3 4 4" />
+                                </svg>
+                            </div>
+                            <div class="include-item-details">
+                                <h4>Close-ups</h4>
+                                <p>Details of walls, ceilings, or specific areas to be finished.</p>
+                            </div>
+                        </div>
+                        <div class="include-item">
+                            <div class="icon-container">
+                                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="4" width="9" height="4" rx="1" />
+                                    <rect x="13" y="4" width="9" height="4" rx="1" />
+                                    
+                                    <rect x="1" y="10" width="4" height="4" rx="1" />
+                                    <rect x="7" y="10" width="10" height="4" rx="1" />
+                                    <rect x="19" y="10" width="4" height="4" rx="1" />
+                                    
+                                    <rect x="2" y="16" width="9" height="4" rx="1" />
+                                    <rect x="13" y="16" width="9" height="4" rx="1" />
+                                </svg>
+                            </div>
+                            <div class="include-item-details">
+                                <h4>Problem areas</h4>
+                                <p>Cracks, patches, uneven surfaces, or previous repairs.</p>
+                            </div>
+                        </div>
+                        <div class="include-item">
+                            <div class="icon-container">
+                                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M3 10l9-7 9 7" />
+                                    
+                                    <path d="M5 10v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V10" />
+                                    
+                                    <path d="M9 21v-4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v4" />
+                                </svg>
+                            </div>
+                            <div class="include-item-details">
+                                <h4>Exterior areas (if applicable)</h4>
+                                <p>External walls requiring insulation or render.</p>
+                            </div>
+                        </div>   
+                        <div class="include-item">
+                            <div class="icon-container">
+                                <svg width="35" height="35" viewBox="0 0 24 24" fill="none" stroke="#7a7a7a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="2" y="14" width="20" height="6" rx="1" />
+                                    
+                                    <path d="M6 14v2" />
+                                    <path d="M10 14v2" />
+                                    <path d="M14 14v2" />
+                                    <path d="M18 14v2" />
+                                    
+                                    <path d="M4 8h16" />
+                                    <path d="M7 5l-3 3 3 3" />
+                                    <path d="M17 5l3 3-3 3" />
+                                </svg>
+                            </div>
+                            <div class="include-item-details">
+                                <h4>Approximate size</h4>
+                                <p>Room size or wall dimensions, if known. Estimates are perfectly fine.</p>
+                            </div>
+                        </div>   
+                    </div>
+                    <p class="text-left">If you're unsure, send what you have and we'll do our best to give you an accurate quote.</p>
+                </div>
+            </div>
+            
+        </section>
+
+    </main>
+    <div id="fullscreen-spinner" class="fixed loading-spinner-container spinner show">
+        <div class="spinner-border show-spinner" role="status">
+            <span hidden>Loading...</span>
+        </div>
+    </div>
+    
+
+<script src="script.min.js"></script>
+<script src="loader.min.js"></script>
+</body>
+</html>

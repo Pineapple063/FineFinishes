@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>South Dublin Fine Finishes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <svg class="minimized" xmlns='http://www.w3.org/2000/svg'>
+        <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="turbulence" baseFrequency="0.002 0.07" numOctaves="8" result="noiseTexture"/>
+        <feComponentTransfer in="noiseTexture" result="hardNoise">
+            <feFuncA type="linear" slope="5" intercept="-1"/>
+        </feComponentTransfer>
+        <feColorMatrix type="matrix" in="hardNoise" result="coloredNoise"
+        values="0.6 0 0 0 0
+                0.5 0 0 0 0
+                0.4 0 0 0 0
+                0 0 0 0.15 0"/>
+        <feBlend in="coloredNoise" in2="SourceGraphic" mode="soft-light"/>
+    </filter>
+    </svg>
+    <header>
+        <a href="/" class="logo-container">
+            
+            
+            <img src="static/logo-128.png">
+            
+        </a>
+        <div class="header-nav">
+            <a href="/">Home</a>
+            <a href="quote">Get a Quote</a>
+        </div>
+        
+    </header>
+
+    <main>
+        <section class="hero-content reveal-on-scroll">
+            <h1>Premium Plastering in South Dublin</h1>
+            
+            <p class="subheadline">
+                Flawless plastering, specialist skimming
+                
+                for renovations and fine finishes.
+            </p>
+
+            <div class="trust-bar">
+                <span><i class="fas fa-star star"></i> 5.0 Reviews</span>
+                <span class="dot">•</span>
+                <span>Fully Insured</span>
+                <span class="dot">•</span>
+                <span>Fast Quotes</span>
+            </div>
+
+            <a href="quote.html" class="btn-primary">Get a Quote <i class="fas fa-chevron-right" style="font-size: 10px; margin-left: 6px;"></i></a>
+            
+            <p class="micro-copy">Reply in under 60 minutes during working hours.</p>
+            <div class="stacked-headline">
+                <p>Clean Work. Sharp Lines. Zero Mess.</p>
+            </div>
+
+        </section>
+        <div class="horizontal-fade"></div>
+        <div class="hero-subcontent reveal-on-scroll">
+            <h1>Fine Finishes</h1>
+            <p>Completed plastering work across South Dublin homes.</p>
+        </div>
+        
+        <div class="images-grid flex flex-row reveal-on-scroll">
+            <div class="images-grid-left">
+                <img src="static/hero-image-1.webp">
+            </div>
+            <div class="images-grid-right flex flex-col">
+                <img src="static/hero-image-2.webp">
+                <img src="static/hero-image-3.webp">
+            </div>
+        </div>
+        <div class="horizontal-fade"></div>
+        <section class="our-services reveal-on-scroll" id="our-services">
+            <div class="our-services-title">
+                <h1>Our Services</h1>
+                <p class="subheadline">Focused on clean, paint-ready finishes across all our services.</p>
+            </div>
+            <div class="services-external">
+                <img src="static/services-external.webp">
+                <h2>External Wall Insulation <span>&</span> Render</h2>
+                <p>Insulated external wall systems finished with a clean, modern render</p>
+                <a href="quote.html" class="btn-primary">Get a Quote</a>
+            </div>
+            <div class="services-main">
+                <h2>Seamless, paint-ready finishes.</h2>
+                <div class="services-grid">
+                    <div class="services-grid-item">
+                        <img src="static/services-skimming.webp">
+                        <h3>Skimming<br><span>(Walls <span class="and">&</span> Ceilings)</span></h3>
+                        <p>Smooth, paint-ready surfaces with a clean finish.</p>
+                    </div>
+                    <div class="services-grid-item">
+                        <img src="static/services-renovation.webp"
+                        >
+                        <h3>Renovation Plastering</h3>
+                        <p>Re-skims and surface finishes.</p>
+                    </div>
+                    <div class="services-grid-item">
+                        <img src="static/services-patch_repairs.webp">
+                        <h3>Patch Repairs & Blending</span></h3>
+                        <p>Seamless repairs that blend perfectly.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="horizontal-fade"></div>
+    </main>
+    <div id="fullscreen-spinner" class="fixed loading-spinner-container spinner show">
+        <div class="spinner-border show-spinner" role="status">
+            <span hidden>Loading...</span>
+        </div>
+    </div>
+    <div class="sticky-footer">
+        <div class="footer-content">
+            <a href="tel:0861234567" class="phone-link">
+                <i class="fas fa-phone-alt phone-icon"></i> 086 123 4567
+            </a>
+            <a href="#" class="whatsapp-btn">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </a>
+        </div>
+    </div>
+
+<script src="loader.min.js"></script>
+</body>
+</html>
