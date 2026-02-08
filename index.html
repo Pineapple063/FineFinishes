@@ -9,10 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.min.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="reveal-on-scroll">
     <svg class="minimized" xmlns='http://www.w3.org/2000/svg'>
         <filter id="noise" x="0%" y="0%" width="100%" height="110%">
         <feTurbulence type="turbulence" baseFrequency="0.002 0.07" numOctaves="1" result="noiseTexture"/>
@@ -37,7 +37,7 @@
         </div>
     </header>
     <main>
-        <section class="hero-content reveal-on-scroll">
+        <section class="hero-content">
             <h1>Premium Plastering in South Dublin</h1>
             <p class="subheadline">
                 Flawless plastering, specialist skimming
@@ -57,21 +57,21 @@
             </div>
         </section>
         <div class="horizontal-fade"></div>
-        <div class="hero-subcontent reveal-on-scroll">
+        <div class="hero-subcontent">
             <h1>Fine Finishes</h1>
             <p>Completed plastering work across South Dublin homes.</p>
         </div>
-        <div class="images-grid flex flex-row reveal-on-scroll">
+        <div class="images-grid flex flex-row">
             <div class="images-grid-left">
-                <img src="static/hero-image-1.webp">
+                <img class="reveal-from-left" src="static/hero-image-1.webp">
             </div>
             <div class="images-grid-right flex flex-col">
-                <img src="static/hero-image-2.webp">
-                <img src="static/hero-image-3.webp">
+                <img class="reveal-from-right" src="static/hero-image-2.webp">
+                <img class="reveal-from-right" src="static/hero-image-3.webp">
             </div>
         </div>
         <div class="horizontal-fade"></div>
-        <section class="our-services reveal-on-scroll" id="our-services">
+        <section class="our-services" id="our-services">
             <div class="our-services-title">
                 <h1>Our Services</h1>
                 <p class="subheadline">Focused on clean, paint-ready finishes across all our services.</p>
@@ -86,17 +86,25 @@
                 <h2>Seamless, paint-ready finishes.</h2>
                 <div class="services-grid">
                     <div class="services-grid-item">
-                        <img src="static/services-skimming.webp">
+                        <div class="image-container plaster-warmth">
+                            <img src="static/services-skimming.webp">
+                        </div>
+                            
+                        
                         <h3>Skimming<br><span>(Walls <span class="and">&</span> Ceilings)</span></h3>
                         <p>Smooth, paint-ready surfaces with a clean finish.</p>
                     </div>
                     <div class="services-grid-item">
-                        <img src="static/services-renovation.webp">
+                        <div class="image-container plaster-warmth">
+                            <img src="static/services-renovation.webp">
+                        </div>
                         <h3>Renovation Plastering</h3>
                         <p>Re-skims and surface finishes.</p>
                     </div>
                     <div class="services-grid-item">
-                        <img src="static/services-patch_repairs.webp">
+                        <div class="image-container plaster-warmth">
+                            <img src="static/services-patch_repairs.webp">
+                        </div>
                         <h3>Patch Repairs & Blending</span></h3>
                         <p>Seamless repairs that blend perfectly.</p>
                     </div>
@@ -120,6 +128,6 @@
             </a>
         </div>
     </div>
-<script src="loader.min.js"></script>
+<script src="loader.js"></script>
 </body>
 </html>
